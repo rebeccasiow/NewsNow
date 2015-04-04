@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html>
+<head><title>Register!</title></head>
+<body>
+
+<h1>Register!</h1>
+
+<a href="home.php"> Back to Home </a>
+        
+        
+<form action="info.php" method="POST">	
+	<!--Form for inputting username and password with a submit button-->
+	<!-- This script assumes a POST variable of "user", which is the username that is requested to be registered-->
+        
+		<p>
+			<label for="username">Username(max. 255 characters):</label>
+			<input type="text" name="username" id="username">
+		</p>	
+		<p>
+			<label for="userpassword">Password(max. 123 characters):</label>
+			<input type="password" name="userpassword" id="userpassword">
+			<input type="hidden" name="token" value="<?php echo $_SESSION['token'];?>" /> 
+			<!--To prevent CSRF attacks-->
+		</p>
+		<p>
+			<INPUT TYPE = "submit" Name = "Login" VALUE = "Login"><
+		</p>
+
+
+</form>
+
+
+<p>Already a member? <a href="login.html"> Login here. </a></p>
+
+</body>
+
+</html>
